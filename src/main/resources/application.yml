@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: application
+  cloud:
+    nacos:
+      server-addr: xxx
+      config:
+        namespace: xxx
+        group: xxx
+        file-extension: yml
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.yml?group=${spring.cloud.nacos.config.group}&namespace=${spring.cloud.nacos.config.namespace}
+
